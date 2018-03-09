@@ -1,0 +1,7 @@
+/* pages/bluetooth/bluetooth.wxss */
+.top{
+  padding:50px 0;
+}
+.search{
+  width:150px;
+}

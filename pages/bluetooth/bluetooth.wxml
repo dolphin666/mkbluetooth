@@ -1,0 +1,10 @@
+<!--pages/bluetooth/bluetooth.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-btn-area">
+      <picker bindchange="bindPickerChange" value="{{index.value}}" range="{{array}}">
+        <button class="search" type="primary">搜索蓝牙设备</button>
+      </picker>
+    </view>
+  </view>
+</view>

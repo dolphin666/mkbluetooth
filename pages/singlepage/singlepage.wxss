@@ -1,0 +1,28 @@
+/**index.wxss**/
+.single_box{
+  padding: 20px;
+  clear: both;
+}
+.single_l{
+  width:70%;
+  float:left;
+}
+.single_l .weui-input{
+  border:1px solid #eee;
+  padding-left: 10px;
+}
+.single_r{
+  width: 30%;
+  float:right;
+  text-align: center;
+}
+.single_bot{
+  padding-top: 30px;
+  clear:both;
+}
+.single_bot button{
+  width:150px;
+}
+.single_msg{
+  padding:10px;
+}

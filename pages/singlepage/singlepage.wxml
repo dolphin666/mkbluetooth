@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class='single_box'>
+  <view class="single_l">
+    <input class="weui-input" placeholder="输入信息" />
+  </view>
+  <view class="single_r">
+    <button type='primary' class="weui-vcode-btn">发送</button>
+  </view>
+</view>
+<view class='single_bot'>
+  <view>
+    <button type='primary'>接收信息</button>
+  </view>
+  <view class='single_msg'>{{message}}</view>
+</view>
