@@ -1,7 +1,23 @@
 /* pages/bluetooth/bluetooth.wxss */
+@import "../../weui.wxss";
 .top{
   padding:50px 0;
 }
 .search{
-  width:150px;
+  width:400rpx;
+}
+.lanya1-state{
+  width:100%;
+  height:50px;
+}
+.venues_list{
+  padding:10px 0;
+}
+ .venues_item{
+  margin:10px;
+  background: #eee;
+  text-align: center;
+}
+.status,section{
+  width: 100%;
 }

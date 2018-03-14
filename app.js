@@ -34,6 +34,13 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    connDeviceId:"",
+    wrtServicweId:"",
+    wrtCharacteristicsId:"",
+    reaServicweId:"",
+    reaCharacteristicsId:"",
+    notiServicweId:"",
+    notiCharacteristicsId:""
   }
 })

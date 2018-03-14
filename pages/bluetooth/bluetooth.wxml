@@ -1,10 +1,22 @@
 <!--pages/bluetooth/bluetooth.wxml-->
-<view class="page">
-  <view class="page__bd">
-    <view class="weui-btn-area">
-      <picker bindchange="bindPickerChange" value="{{index.value}}" range="{{array}}">
-        <button class="search" type="primary">搜索蓝牙设备</button>
-      </picker>
-    </view>
+<view class='weui-cell__hd'>
+  <view class='top'>
+    <button class='search' type='primary' bindtap='search'>搜索蓝牙设备</button>
   </view>
+</view>
+<view class='weui-cells weui-cells_after-title'>
+  <view class="venues_list">
+        <block wx:for="{{devices}}" wx:key="{{test}}">
+          <view class="venues_item">
+            <view class="status">设备名称:{{item.name}}</view>
+            <view class="status">设备ID:{{item.deviceId}}</view>
+            <view class="status">连接状态:{{connectedDeviceId == item.deviceId?"已连接":"未连接"}}</view>
+            <view class="section">
+            </view>
+            <view class="section">
+              <button type="warn" class="button" id="{{item.deviceId}}" bindtap="connectTO">连接</button>
+            </view>
+          </view>
+        </block>
+      </view>
 </view>
