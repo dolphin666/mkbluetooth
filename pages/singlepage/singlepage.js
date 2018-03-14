@@ -140,7 +140,7 @@ Page({
     // 必须在这里的回调才能获取  
     wx.onBLECharacteristicValueChange(function (characteristic) {
       let hex = Array.prototype.map.call(new Uint8Array(characteristic.value), x => ('00' + x.toString(16)).slice(-2)).join('');
-      // console.log(hex)
+      console.log(hex)
       // wx.request({
       //   url: '***/getDecrypt',
       //   data: { hexString: hex },
@@ -171,5 +171,44 @@ Page({
         console.log('readBLECharacteristicValue:', res.errMsg);
       }
     })
-  }
+  },
+  // lanya10: function () {
+  //   var that = this;
+  //   that.getGlobalVar();
+  //   console.log(that.data.connectedDeviceId, that.data.readServicweId, that.data.readCharacteristicsId)
+  //   // 必须在这里的回调才能获取  
+  //   wx.onBLECharacteristicValueChange(function (characteristic) {
+  //     let hex = Array.prototype.map.call(new Uint8Array(characteristic.value), x => ('00' + x.toString(16)).slice(-2)).join('');
+  //     // console.log(hex)
+  //     // wx.request({
+  //     //   url: '***/getDecrypt',
+  //     //   data: { hexString: hex },
+  //     //   method: "POST",
+  //     //   header: {
+  //     //     'content-type': 'application/x-www-form-urlencoded'
+  //     //   },
+  //     //   success: function (data) {
+  //     //     //console.log(data)  
+  //     //     var res = data.data.data;
+  //     //     that.setData({
+  //     //       jieshou: res,
+  //     //     })
+  //     //   }
+  //     // })
+  //   })
+  //   console.log(that.data.readServicweId);
+  //   console.log(that.data.readCharacteristicsId);
+  //   wx.readBLECharacteristicValue({
+  //     // 这里的 deviceId 需要在上面的 getBluetoothDevices 或 onBluetoothDeviceFound 接口中获取  
+  //     deviceId: that.data.connectedDeviceId,
+  //     // 这里的 serviceId 需要在上面的 getBLEDeviceServices 接口中获取  
+  //     serviceId: that.data.readServicweId,
+  //     // 这里的 characteristicId 需要在上面的 getBLEDeviceCharacteristics 接口中获取  
+  //     characteristicId: that.data.readCharacteristicsId,
+  //     success: function (res) {
+  //       console.log(that.data.connectedDeviceId, that.data.writeServicweId, that.data.writeCharacteristicsId)
+  //       console.log('readBLECharacteristicValue:', res.errMsg);
+  //     }
+  //   })
+  // }
 })
