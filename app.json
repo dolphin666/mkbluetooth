@@ -1,9 +1,11 @@
 {
   "pages":[
-    "pages/bluetooth/bluetooth",
-    "pages/singlepage/singlepage",
-    "pages/picker/picker",
+    "pages/clock/clock",
+    "pages/scan/scan",
     "pages/index/index",
+    "pages/picker/picker",
+    "pages/singlepage/singlepage",
+    "pages/bluetooth/bluetooth",
     "pages/logs/logs"
   ],
   "window":{

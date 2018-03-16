@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class='single_box'>
   <view class="single_l">
-    <input class="weui-input" bindtap='inputTextchange' placeholder="输入信息" />
+    <input class="weui-input" bindinput='inputTextchange' placeholder="输入数字" />
   </view>
   <view class="single_r">
     <button type='primary' class="weui-vcode-btn" bindtap='lanya8'>发送</button>
@@ -11,5 +11,5 @@
   <view>
     <button type='primary' bindtap='lanya10'>接收信息</button>
   </view>
-  <view class='single_msg'>{{message}}</view>
+  <view class='single_msg'>{{hex}}</view>
 </view>

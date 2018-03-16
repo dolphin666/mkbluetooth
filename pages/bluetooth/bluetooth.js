@@ -1,25 +1,6 @@
 var app = getApp();
 Page({
   data: {
-    // arrId:[],
-    objectArray: [
-      // {
-      //   id: 0,
-      //   name: '美国'
-      // },
-      // {
-      //   id: 1,
-      //   name: '中国'
-      // },
-      // {
-      //   id: 2,
-      //   name: '巴西'
-      // },
-      // {
-      //   id: 3,
-      //   name: '日本'
-      // }
-    ],
     status: "",
     sousuo: "",
     connectedDeviceId: "", //已连接设备uuid  
@@ -178,7 +159,7 @@ Page({
       wx.showToast({
         title: '连接中',
         icon: 'loading',
-        duration: 1000
+        duration: 5000
       })
     })()
     wx.createBLEConnection({
@@ -194,6 +175,13 @@ Page({
       },
       fail: function () {
         console.log("调用失败");
+        (() => {
+          wx.showToast({
+            title: '连接失败，请再次连接',
+            icon: 'loading',
+            duration: 5000
+          })
+        })()
       },
       complete: function () {
         console.log("调用结束");
@@ -215,8 +203,13 @@ Page({
           msg: JSON.stringify(res.services),
         })
         console.log(that.services,that.deviceId,that.characteristicId)
+        console.log("连接设备的service服务成功")
         that.lanya7()
+      },
+      fail:function(){
+        console.log("连接设备的service服务失败")
       }
+      
     })
   },
   //获取连接设备的所有特征值  for循环获取不到值  
@@ -258,7 +251,7 @@ Page({
         })
       },
       fail: function () {
-        console.log("fail");
+        console.log("获取蓝牙设备特征值 fail");
       },
       complete: function () {
         console.log("complete");
@@ -297,7 +290,6 @@ Page({
         that.setData({
           msg1: JSON.stringify(res.characteristics),
         })
-        console.log("lanya7-完成")
         console.log()
         wx.navigateTo({
           url: `../singlepage/singlepage`,
