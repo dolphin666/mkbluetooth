@@ -1,0 +1,23 @@
+<html>
+<body>
+
+<script type="text/javascript">
+
+    var req = new XMLHttpRequest();
+    req.open('GET', "http://www.example.com");
+    req.responseType = "arraybuffer";
+    req.send();
+
+    req.onreadystatechange = function () {
+        if (req.readyState === 4) {
+            var buffer = req.response;
+            var dataview = new DataView(buffer);
+            var ints = new Uint8Array(buffer.byteLength);
+            for (var i = 0; i < ints.length; i++) {
+                ints[i] = dataview.getUint8(i);
+            }
+            alert(ints[10]);
+        }
+    }
+
+</script>

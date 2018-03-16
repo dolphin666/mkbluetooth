@@ -1,0 +1,158 @@
+/* pages/scan/scan.wxss */
+@import '../../iconfont.wxss';
+
+/* page{
+  overflow-x: none;
+} */
+
+.scan-box {
+  /* padding: 0 10rpx; */
+}
+
+.scan-top {
+  padding: 0 30rpx 30rpx;
+}
+
+.scan-name {
+  font-weight: bold;
+}
+
+.scan-search {
+  width: 150rpx;
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  padding-left: 30rpx;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-btn {
+  display: table-cell;
+  font-size: 14px;
+  width: 40px;
+  line-height: 1.2;
+  height: 80px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.led {
+  height: 64px;
+}
+
+.yg {
+  height: 48px;
+}
+
+.ddw {
+  height: 72px;
+}
+
+.control-show {
+  padding: 30rpx 40rpx 10rpx;
+  /* margin-top: 30rpx; */
+  background: #eee;
+}
+
+.control-btns, .control-btns2 {
+  margin-bottom: 30rpx;
+  /* border: 1px solid #aaa; */
+  background: #666;
+}
+
+.control-btns::after, .control-btns2::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.control-btn {
+  padding: 5rpx 20rpx;
+  /* width: 90%;  */
+  box-sizing: border-box;
+}
+
+.control-btn::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.icon-dianbo01, .icon-kaiguan, .icon-twenduji, .icon-yyshidu1, .control-name,
+.control-enName, .icon-xianshiping {
+  display: block;
+  float: left;
+  line-height: 80rpx;
+  height: 80rpx;
+  padding-right: 30rpx;
+}
+
+.icon-dianbo01, .icon-kaiguan, .icon-twenduji, .icon-yyshidu1 {
+  width: 100rpx;
+  text-align: center;
+  color: #aaa;
+}
+
+.control-enName {
+  color: #999;
+}
+
+.switch {
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+
+.icon-twenduji {
+  font-size: 60rpx;
+}
+
+.icon-yyshidu1 {
+  font-size: 40rpx;
+}
+
+.control-btns2-input {
+  float: right;
+  color: #999;
+  vertical-align: bottom;
+}
+
+.control-btn2-unit {
+  float: right;
+  line-height: 80rpx;
+  height: 80rpx;
+  padding-right: 30rpx;
+}
+
+.scan-bottom-btns {
+  width: 100%;
+  padding: 0 30rpx 10rpx;
+  box-sizing: border-box;
+}
+.scan-textarea{
+  padding: 0 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+textarea{
+  border: 1px solid #aaa;
+  width: 100%;
+}
+.scan-bottom-btn {
+  width: 150rpx;
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  line-height: 2;
+  margin: 10rpx;
+}

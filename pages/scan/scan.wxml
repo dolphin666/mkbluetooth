@@ -1,0 +1,73 @@
+<!--pages/scan/scan.wxml-->
+<view class='scan-box'>
+  <view class='scan-top'>
+    <text class='scan-name'>BLE DEVICE SCAN</text>
+    <button class='scan-search'>搜索</button>
+  </view>
+  <view class='flex-row'>
+    <view class='flex-view-item'>
+      <view class='flex-column'>
+        <view class='flex-view-item'>
+          <button class='sec-btn led'>L\n E\n D</button>
+        </view>
+        <view class='flex-view-item'>
+          <button class='sec-btn yg'>摇\n 杆</button>
+        </view>
+        <view class='flex-view-item'>
+          <button class='sec-btn ddw'>读\n 电\n 位\n 数</button>
+        </view>
+      </view>
+    </view>
+    <view class='flex-view-item'>
+      <view id='ddw'>
+        <canvas canvas-id='myCanvas' class='myCanvas'/>
+      </view>
+    </view>
+  </view>
+  <view class='control-show'>
+    <view class='control-btns'>
+      <view class='control-btn'>
+        <text class='iconfont icon-dianbo01'></text>
+        <text class='control-name'>蜂鸣器</text>
+        <text class='control-enName'>Buzzer</text>
+        <switch class='switch' bindchange='BuzzerSwitch'></switch>
+      </view>
+      <view class='control-btn'>
+        <text class='iconfont icon-kaiguan'></text>
+        <text class='control-name'>继电器</text>
+        <text class='control-enName'>Relay</text>
+        <switch class='switch' bindchange='BuzzerSwitch'></switch>
+      </view>
+    </view>
+    <view class='control-btns2'>
+      <view class='control-btn'>
+        <text class='iconfont icon-twenduji'></text>
+        <text class='control-name'>温度</text>
+        <text class='control-enName'>Temperature</text>
+        <text class='control-btn2-unit'> ℃</text>
+        <text class='control-btns2-input'>{{}}</text>
+      </view>
+      <view class='control-btn'>
+        <text class='iconfont icon-yyshidu1'></text>
+        <text class='control-name'>湿度</text>
+        <text class='control-enName'>Humidity</text>
+        <text class='control-btn2-unit'>%</text>
+        <text class='control-btns2-input'>{{}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='scan-bottom'>
+    <view class='control-btn'>
+      <text class='iconfont icon-xianshiping'></text>
+      <text class='control-name'>显示屏</text>
+      <text class='control-enName'>OLED</text>
+    </view>
+    <view class='scan-textarea'>
+      <textarea name="textarea" />
+    </view>
+    <view class='scan-bottom-btns'>
+      <button class='scan-bottom-btn' form-type="submit"> 提交 </button>
+      <button class='scan-bottom-btn' form-type="reset"> 清除 </button>
+    </view>
+  </view>
+</view>
