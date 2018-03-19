@@ -1,17 +1,20 @@
 {
-  "pages":[
-    "pages/clock/clock",
+  "pages": [
+    "pages/drawImg/drawImg",
     "pages/scan/scan",
+    "pages/test/test",
+    "pages/clock/clock",
     "pages/index/index",
     "pages/picker/picker",
     "pages/singlepage/singlepage",
     "pages/bluetooth/bluetooth",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/drawImg/res"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

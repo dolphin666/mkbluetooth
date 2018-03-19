@@ -6,20 +6,38 @@
   </view>
   <view class='flex-row'>
     <view class='flex-view-item'>
-      <view class='flex-column'>
+      <view class='flex-column' bindtap="tabFun">
         <view class='flex-view-item'>
-          <button class='sec-btn led'>L\n E\n D</button>
+          <button class="sec-btn led {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">L\n E\n D</button>
         </view>
         <view class='flex-view-item'>
-          <button class='sec-btn yg'>摇\n 杆</button>
+          <button class="sec-btn yg {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">摇\n 杆</button>
         </view>
         <view class='flex-view-item'>
-          <button class='sec-btn ddw'>读\n 电\n 位\n 数</button>
+          <button class="sec-btn ddw {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">读\n 电\n 位\n 数</button>
         </view>
       </view>
     </view>
-    <view class='flex-view-item'>
-      <view id='ddw'>
+    <view class='flex-view-item tab-right'>
+      <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+        <!-- <canvas canvas-id='myCanvas1' class='myCanvas'/> -->
+      </view>
+      <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+        <view class='pitman'>
+          <view class='pit-sec'>
+            <view class='arr-up iconfont icon-arrowup'></view>
+          </view>
+          <view class='pit-sec'>
+            <view class='arr-left iconfont icon-arrowleft'></view>
+            <view class='arr-center'></view>
+            <view class='arr-right iconfont icon-arrowright'></view>
+          </view>
+          <view class='pit-sec'>
+            <view class='arr-down iconfont icon-arrowdown'></view>
+          </view>
+        </view>
+      </view>
+      <view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
         <canvas canvas-id='myCanvas' class='myCanvas'/>
       </view>
     </view>

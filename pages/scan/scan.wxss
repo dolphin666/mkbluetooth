@@ -35,7 +35,18 @@
   display: flex;
   flex-direction: column;
 }
-
+.tab-right{
+  height: 420rpx;
+  width: 600rpx;
+}
+.tab-right .right-item{
+  display: none;
+  /* width: 250px;height:200px; */
+}
+.tab-right .right-item.active{
+  display: block;
+  /* width: 250px;height:200px; */
+}
 .sec-btn {
   display: table-cell;
   font-size: 14px;
@@ -57,7 +68,42 @@
 .ddw {
   height: 72px;
 }
-
+.pitman{
+  width:402rpx;
+  height: 402rpx;
+  margin: 0 auto;
+  background: #999;
+  border-radius: 200rpx;
+}
+.pit-sec{
+width: 100%;
+height: 134rpx;
+/* background: red; */
+}
+.pit-sec view{
+  width: 134rpx;
+  height: 134rpx;
+  text-align: center;
+  font-size:120rpx;
+  line-height: 134rpx;
+}
+.pit-sec view:hover{
+  color:lightgreen;
+}
+.arr-left,.arr-center,.arr-right{
+  float:left;
+}
+.arr-up,.arr-down{
+  margin: 0 auto;
+}
+.arr-center{
+  border-radius: 76rpx;
+  background: lightgreen;
+}
+ .myCanvas{
+  width:250px;
+  height:200px;
+} 
 .control-show {
   padding: 30rpx 40rpx 10rpx;
   /* margin-top: 30rpx; */
