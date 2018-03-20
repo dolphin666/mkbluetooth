@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/drawImg/drawImg",
     "pages/scan/scan",
+    "pages/drawImg/drawImg",
     "pages/test/test",
     "pages/clock/clock",
     "pages/index/index",
     "pages/picker/picker",
     "pages/singlepage/singlepage",
     "pages/bluetooth/bluetooth",
-    "pages/logs/logs",
-    "pages/drawImg/res"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -100,10 +100,26 @@ height: 134rpx;
   border-radius: 76rpx;
   background: lightgreen;
 }
+/*读电位数  */
  .myCanvas{
   width:250px;
-  height:200px;
+  height:180px;
+  position: absolute;
 } 
+.degrees{
+  position: relative;
+}
+.myCanvas2{
+  width: 250px;
+  height: 180px;
+  position: absolute;
+}
+/* LED  */
+.imgCanvas{
+  width: 175px;
+  height: 175px;
+  margin: 0 auto;
+}
 .control-show {
   padding: 30rpx 40rpx 10rpx;
   /* margin-top: 30rpx; */

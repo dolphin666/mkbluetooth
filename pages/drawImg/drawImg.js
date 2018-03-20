@@ -1,4 +1,9 @@
 // pages/drawImg/drawImg.js
+function drawImg(sehuan) {
+  var mycv = document.getElementById("my_Canvas")
+  var myctx = mycv.getContext("my_Canvas")
+  myctx.drawImage(sehuan)
+}
 Page({
 
   /**
@@ -7,7 +12,6 @@ Page({
   data: {
   
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

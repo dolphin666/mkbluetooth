@@ -14,13 +14,13 @@
           <button class="sec-btn yg {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">摇\n 杆</button>
         </view>
         <view class='flex-view-item'>
-          <button class="sec-btn ddw {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">读\n 电\n 位\n 数</button>
+          <button bindtap='drawCircle' class="sec-btn ddw {{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">读\n 电\n 位\n 数</button>
         </view>
       </view>
     </view>
     <view class='flex-view-item tab-right'>
       <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
-        <!-- <canvas canvas-id='myCanvas1' class='myCanvas'/> -->
+         <canvas bindtouchmove="getOrigin" canvas-id='imgCanvas' class='imgCanvas'/> 
       </view>
       <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
         <view class='pitman'>
@@ -37,8 +37,9 @@
           </view>
         </view>
       </view>
-      <view class="right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
+      <view class="degrees right-item {{tabArr.curBdIndex=='2'? 'active' : ''}}">
         <canvas canvas-id='myCanvas' class='myCanvas'/>
+        <canvas canvas-id='myCanvas2' class='myCanvas2'/>
       </view>
     </view>
   </view>
