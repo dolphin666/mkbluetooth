@@ -1,0 +1,22 @@
+<!--pages/handle/handle.wxml-->
+<view class='page-section'>
+  <view class='page-section-spacing'>
+    <movable-area class="movable-area-handle" style="height:{{areaHeight}}px;width:{{areaWidth}}px; border: 2px solid #eee; margin:0 auto;  border-radius: {{areaWidth/2}}px">
+      <movable-view bindtouchmove='bindMoveEvent' bindtouchend='bindMoveEnd' class='movable-view-handle' damping="{{damping}}" friction="{{friction}}" inertia="{{inertia}}" out-of-bounds="{{outOfBounds}}" x="{{posx}}" y="{{posy}}" direction="{{direction}}"
+        style="width:{{areaWidth/2.5}}px; height: {{areaWidth/2.5}}px; border: 4px solid #999; border-radius: {{areaWidth/2.5}}px;"></movable-view>
+    </movable-area>
+  </view>
+  <view class='pitman'>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-up iconfont icon-arrowup' style="color:{{colorBlack}}"></view>
+    </view>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-left iconfont icon-arrowleft' style="color:{{colorBlack}}"></view>
+      <view class='arr-center'></view>
+      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-right iconfont icon-arrowright' style="color:{{colorBlack}}"></view>
+    </view>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-down iconfont icon-arrowdown' style="color:{{colorBlack}}"></view>
+    </view>
+  </view>
+</view>

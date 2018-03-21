@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/handle/handle",
     "pages/scan/scan",
     "pages/drawImg/drawImg",
     "pages/test/test",
