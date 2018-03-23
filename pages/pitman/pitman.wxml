@@ -1,0 +1,24 @@
+<!--pages/pitman/pitman.wxml-->
+<view class='pitman'>
+  <canvas canvas-id="pitman"
+  style="width:375rpx;height:375rpx;margin:0 auto;"
+  bindtouchstart="touchstart"
+  bindtouchmove="touchmove"
+  bindtouchend="touchend"/>
+</view>
+ <!-- <view hidden="{{hidden}}">
+  Coordinates: ({{x}}, {{y}})
+</view>  -->
+<view class='handle'>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor1' bindtouchend="changeColor2" class='arr-up iconfont icon-arrow-t' style="color:{{colorBlack1}}"></view>
+    </view>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor3' bindtouchend="changeColor4" class='arr-left iconfont icon-arrow-l' style="color:{{colorBlack2}}"></view>
+      <view class='arr-center'></view>
+      <view bindtouchstart='changeColor5' bindtouchend="changeColor6" class='arr-right iconfont icon-arrow-r' style="color:{{colorBlack3}}"></view>
+    </view>
+    <view class='pit-sec'>
+      <view bindtouchstart='changeColor7' bindtouchend="changeColor8" class='arr-down iconfont icon-arrow-b' style="color:{{colorBlack4}}"></view>
+    </view>
+  </view>

@@ -1,2 +1,0 @@
-<!--pages/drawImg/drawImg.wxml-->
-<canvas canvas-id="my_Canvas" style="border: 1px solid;"/>

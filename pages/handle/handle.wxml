@@ -1,22 +1,23 @@
 <!--pages/handle/handle.wxml-->
 <view class='page-section'>
-  <view class='page-section-spacing'>
-    <movable-area class="movable-area-handle" style="height:{{areaHeight}}px;width:{{areaWidth}}px; border: 2px solid #eee; margin:0 auto;  border-radius: {{areaWidth/2}}px">
+  <view class='page-section-spacing' >
+    <movable-area class="movable-area-handle"  style="height:{{areaHeight}}px;width:{{areaWidth}}px; border: 2px solid #eee; margin:0 auto;  border-radius: {{areaWidth/2}}px">
       <movable-view bindtouchmove='bindMoveEvent' bindtouchend='bindMoveEnd' class='movable-view-handle' damping="{{damping}}" friction="{{friction}}" inertia="{{inertia}}" out-of-bounds="{{outOfBounds}}" x="{{posx}}" y="{{posy}}" direction="{{direction}}"
-        style="width:{{areaWidth/2.5}}px; height: {{areaWidth/2.5}}px; border: 4px solid #999; border-radius: {{areaWidth/2.5}}px;"></movable-view>
+        style="position:absolute;top:{{ballTop}}px;left:{{ballLeft}}px;width:{{areaWidth/2.5}}px; height: {{areaWidth/2.5}}px; border: 4px solid #999; border-radius: {{areaWidth/2.5}}px;"></movable-view> 
     </movable-area>
   </view>
+  <!--position:relative;top:{{ballTop}}px;left:{{ballLeft}}px  -->
   <view class='pitman'>
     <view class='pit-sec'>
-      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-up iconfont icon-arrowup' style="color:{{colorBlack}}"></view>
+      <view bindtouchstart='changeColor1' bindtouchend="changeColor2" class='arr-up iconfont icon-arrow-t' style="color:{{colorBlack1}}"></view>
     </view>
     <view class='pit-sec'>
-      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-left iconfont icon-arrowleft' style="color:{{colorBlack}}"></view>
+      <view bindtouchstart='changeColor3' bindtouchend="changeColor4" class='arr-left iconfont icon-arrow-l' style="color:{{colorBlack2}}"></view>
       <view class='arr-center'></view>
-      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-right iconfont icon-arrowright' style="color:{{colorBlack}}"></view>
+      <view bindtouchstart='changeColor5' bindtouchend="changeColor6" class='arr-right iconfont icon-arrow-r' style="color:{{colorBlack3}}"></view>
     </view>
     <view class='pit-sec'>
-      <view bindtouchstart='changeColor' bindtouchend="changeColor2" class='arr-down iconfont icon-arrowdown' style="color:{{colorBlack}}"></view>
+      <view bindtouchstart='changeColor7' bindtouchend="changeColor8" class='arr-down iconfont icon-arrow-b' style="color:{{colorBlack4}}"></view>
     </view>
   </view>
 </view>

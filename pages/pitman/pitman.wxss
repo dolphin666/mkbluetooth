@@ -1,40 +1,22 @@
-/* pages/handle/handle.wxss */
+/* pages/pitman/pitman.wxss */
 @import "../../weui.wxss";
 @import '../../iconfont.wxss';
 page{
-  position: relative;
+  overflow-y: hidden;
 }
-.page-section {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.page-section-spacing {
-  width: 100%;
-  padding-bottom: 40rpx;
-}
-
-.movable-area-handle {
-  /* height: 400rpx;
-  width: 400rpx; */
-  /* border: 2px solid #eee;
-  margin: 0 auto;
-  border-radius: 200rpx; */
-}
-
-.movable-view-handle {
-  /* width: 90px;
-  height: 90px;
-  border: 4px solid #999;
-  border-radius: 90px; */
-}
-
-/* 方向 */
 .pitman{
+  width:750rpx;
+   padding-top: 20px; 
+}
+#pitman{
+  border:1px solid #d3d3d3;
+}
+
+.handle{
   width:450rpx;
   height: 450rpx;
   margin: 0 auto;
-  padding-top: 100rpx;
+  padding-top: 200rpx;
   /* background: #999; */
   border-radius: 200rpx;
 }

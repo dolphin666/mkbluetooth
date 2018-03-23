@@ -27,6 +27,7 @@ Page({
     //绘制色盘
     const ctxImg = wx.createCanvasContext("imgCanvas");
     ctxImg.drawImage("../../img/sehuan.png", 0, 0, 175, 175)
+    console.log(ctxImg)
     ctxImg.draw()
   },
   getOrigin:function(e){
