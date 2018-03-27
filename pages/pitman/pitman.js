@@ -12,11 +12,11 @@ Page({
     jisize: 0,//内摇杆大小
     centerX: 0,//摇杆中心X坐标
     centerY: 0,//摇杆中心Y坐标
-    touchX: 0,//摇杆应该移动到的X位置
-    touchY: 0,//摇杆应该移动到的Y位置
-    jx: 0,
-    jy: 0,
-    ctx: {},
+    touchX: 0,//相对于其父元素的位置X
+    touchY: 0,//相对于其父元素的位置Y
+    jx: 0,//摇杆应该移动到的X位置
+    jy: 0,//摇杆应该移动到的Y位置
+    ctx: {},//
     effectiveFinger: -1,//当前有效手指
 
     colorBlack1: '#ccc',
@@ -33,22 +33,26 @@ Page({
       success: function (res) {
         that.setData({
           screenWidth: res.windowWidth,//获取屏幕宽
-          josize: res.windowWidth / 2,
-          jisize: 0.6 * res.windowWidth / 2,
-          centerX: res.windowWidth / 4,
-          centerY: res.windowWidth / 4,
+          clientHeight: res.windowHeight,//获取屏幕高
+          josize: res.windowWidth / 1.6,
+          jisize: 0.5 * res.windowWidth / 2,
+          centerX: res.windowWidth / 3.2,
+          centerY: res.windowWidth / 3.2,
+          // touchX: (res.windowWidth - res.windowWidth / 1.6)/2,
+          // touchY: 20,
+          overflow:"hidden"
         })
       }
     })
 
     var that = this
-    const ctx1 = wx.createCanvasContext("pitman");
+    let ctx1 = wx.createCanvasContext("pitman");
     that.setData({
       ctx: ctx1
     })
-    that.data.ctx.drawImage("../../img/joystickout.png", that.data.centerX - that.data.josize / 2, that.data.centerY - that.data.josize / 2, that.data.josize, that.data.josize)
-    that.data.ctx.drawImage("../../img/joystickin.png", that.data.centerX - that.data.jisize / 2, that.data.centerY - that.data.jisize / 2, that.data.jisize, that.data.jisize)
-    that.data.ctx.draw()
+    ctx1.drawImage("../../img/joystickout.png", that.data.centerX - that.data.josize / 2, that.data.centerY - that.data.josize / 2, that.data.josize, that.data.josize)
+    ctx1.drawImage("../../img/joystickin.png", that.data.centerX - that.data.jisize / 2, that.data.centerY - that.data.jisize / 2, that.data.jisize, that.data.jisize)
+    ctx1.draw()
     // console.log(that.data.ctx)
   },
 
@@ -68,7 +72,7 @@ Page({
     // console.log(event.touches)
     for (var i = 0; i < event.touches.length; i = i + 1) {
       if (Math.sqrt(Math.pow(event.touches[i].x - that.data.centerX - that.data.touchX, 2) +
-        Math.pow(event.touches[i].y - that.data.centerY - that.data.touchY, 2)) <=
+        Math.pow(event.touches[i].y - that.data.centerY - that.data.touchY, 2)) <
         that.data.josize / 2 - that.data.jisize / 2) {
         that.data.effectiveFinger = i;
         // console.log("finger No." + i + " is effectiveFinger now.");
@@ -81,9 +85,11 @@ Page({
     })
     // that.move()
   },
-  touchend: function (event) {
-    that.move()
+  touchend: function (event) {//手指离开的时候
     var that = this;
+    //若有效手指离开,那就把内摇杆放中间
+    // console.log(event.changedTouches[0])
+    // console.log(event.changedTouches[that.data.effectiveFinger])
     if (event.touches[that.data.effectiveFinger] == null) {
       if (event.touches[0] == null) {
         that.setData({
@@ -92,14 +98,22 @@ Page({
           hidden: true
         })
       }
-      that.data.effectiveFinger -= 1;
+      that.data.effectiveFinger =0;//-=1
     }
+    that.setData({
+      colorBlack1: "#ccc",
+      colorBlack2: "#ccc",
+      colorBlack3: "#ccc",
+      colorBlack4: "#ccc"
+    })
+    that.move()
   },
-  touchmove: function (event) {
+  touchmove: function (event) {//手指移动的时候
     var that = this
+    //是否触摸点在摇杆上
     if (that.data.effectiveFinger != -1)
       if (Math.sqrt(Math.pow(event.touches[that.data.effectiveFinger].x - that.data.centerX - that.data.touchX, 2) +
-        Math.pow(event.touches[that.data.effectiveFinger].y - that.data.centerY - that.data.touchY, 2)) <=
+        Math.pow(event.touches[that.data.effectiveFinger].y - that.data.centerY - that.data.touchY, 2)) <
         that.data.josize / 2 - that.data.jisize / 2) {
         that.data.jx = event.touches[that.data.effectiveFinger].x - that.data.centerX - that.data.touchX;
         that.data.jy = event.touches[that.data.effectiveFinger].y - that.data.centerY - that.data.touchY;
@@ -109,7 +123,6 @@ Page({
         var x = event.touches[that.data.effectiveFinger].x - that.data.touchX,
           y = event.touches[that.data.effectiveFinger].y - that.data.touchY,
           r = that.data.josize / 2 - that.data.jisize / 2;
-
         var ans = that.GetPoint(that.data.centerX, that.data.centerY, r, that.data.centerX, that.data.centerY, x, y);
         // console.log(ans)
         //圆与直线有两个交点，计算出离手指最近的交点
@@ -119,6 +132,7 @@ Page({
         } else {
           that.data.jx = ans[2] - that.data.centerX;
           that.data.jy = ans[3] - that.data.centerY;
+          // that.touchend()
         }
       }
     // event.preventDefault(); //防止页面滑动，取消掉默认的事件
@@ -203,5 +217,27 @@ Page({
     that.setData({
       colorBlack4: "#ccc"
     })
+  },
+  touchend2:function(){
+    var that = this;
+    that.setData({
+      colorBlack1: "#ccc",
+      colorBlack2: "#ccc",
+      colorBlack3: "#ccc",
+      colorBlack4: "#ccc"
+    })
+  }
+  ,
+  touchesmove:function(event){
+    var that=this
+    for (var i = 0; i < event.touches.length; i = i + 1) {
+      // if (Math.sqrt(Math.pow(event.touches[i].x - that.data.centerX - that.data.touchX, 2) +
+      //   Math.pow(event.touches[i].y - that.data.centerY - that.data.touchY, 2)) <
+      //   that.data.josize / 2 - that.data.jisize / 2) {
+      //   that.data.effectiveFinger = i;
+      //   console.log("finger No." + i + " is effectiveFinger now.");
+      // }
+      console.log(event.touches[i])
+    }
   }
 })

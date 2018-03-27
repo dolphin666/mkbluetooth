@@ -1,0 +1,3 @@
+<!--pages/scanCode/scanCode.wxml-->
+<button type="primary" bindtap="scanCode">扫码输入</button>
+<view>{{message}}</view>

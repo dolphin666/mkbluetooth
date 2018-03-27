@@ -16,7 +16,7 @@ page{
   width:450rpx;
   height: 450rpx;
   margin: 0 auto;
-  padding-top: 200rpx;
+  padding-top: 150rpx;
   /* background: #999; */
   border-radius: 200rpx;
 }

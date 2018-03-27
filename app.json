@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/pitman/pitman",
-    "pages/handle/handle",
     "pages/scan/scan",
+    "pages/scanCode/scanCode",
+    "pages/wuLink/wuLink",
+    "pages/handle/handle",
     "pages/clock/clock",
     "pages/index/index",
     "pages/picker/picker",
